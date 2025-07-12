@@ -1,6 +1,6 @@
 keep the script to rtc enable for server wakeup: /usr/local/sbin/schedule_wakeup.sh
 set executable: sudo chmod +x /usr/local/sbin/schedule_wakeup.sh
-Set cron job for shutdown the server at 6:00 PM and call the schedule_wakeup.sh
+Set cron job for shutdown the server at 6:00 PM and call the schedule_wakeup.sh where had schedule to wake up machine at 10a.m
 sudo crontab -e
 0 18 * * * /usr/local/sbin/schedule_wakeup.sh && /sbin/shutdown -h now
 
@@ -11,3 +11,6 @@ cp -f schedule_wakeup.sh /usr/local/sbin/schedule_wakeup.sh
 sudo chmod +x /usr/local/sbin/schedule_wakeup.sh
 sudo crontab -e
 0 18 * * * /usr/local/sbin/schedule_wakeup.sh
+
+if required to stop shutdown and wakeup, use command
+sudo touch /tmp/disable_wakeup
